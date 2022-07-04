@@ -1,0 +1,68 @@
+@model EmailModel
+
+@section Css
+{
+    <link rel="stylesheet" href="/assets/css/form.css">
+    <link rel="stylesheet" href="/assets/css/importexcel.css">
+}
+
+<section>
+    <div class="container">
+        <div class="card card-padding-20">
+            <h3 class="form-title">Import Excel</h3>
+            <form asp-controller="Home" asp-action="ImportExcel" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="importfile">
+                        <input type="file" id="importfile" name="file" class="input-file" onchange="uploadFile(this)">
+                        <span class="button button-medium button-theme">Choose Excel File => </span>
+                        <span id="file-name" class="text-theme">No File Chosen</span>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="button button-medium button-theme flex-right">Import Excel</button>
+                </div>
+            </form>
+        </div>
+        @if (ViewBag.UserEmails != null)
+        {
+            <div class="card">
+                <h3 class="form-title form-title-padding">Users Emails</h3>
+                @foreach (var item in @ViewBag.UserEmails)
+                {
+                    <p class="user-email">@item</p>
+                }
+            </div>
+            <div class="card card-padding-20">
+                <form asp-controller="Home" asp-action="SendEmail" method="POST">
+                    @foreach (var item in @ViewBag.UserEmails)
+                    {
+                        <input type="hidden" name="recipientemails" value="@item">
+                    }
+
+                    <div class="form-group">
+                        <label asp-for="EmailSubject" class="form-label">Subject</label>
+                        <input asp-for="EmailSubject" type="text" class="form-input" placeholder="Mail Subject">
+                    </div>
+
+                    <div class="form-group">
+                        <textarea asp-for="EmailMessage" class="form-textarea" placeholder="Mail Message"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="button button-medium button-theme flex-right">Send Emails</button>
+                    </div>
+                </form>
+            </div>            
+        }
+    </div>
+</section>
+
+@section Scripts
+{
+    <script>
+        function uploadFile(target) {
+            document.querySelector('#file-name').innerHTML = target.files[0].name;
+        }
+    </script>
+}

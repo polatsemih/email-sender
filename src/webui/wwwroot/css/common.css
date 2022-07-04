@@ -1,0 +1,222 @@
+:root {
+    /* FONTS */
+    --family-primary: 'Open Sans', sans-serif;
+    /* COLORS */
+    --color-theme-primary: #A76C00;
+    --color-dark-primary: #000000;
+    --color-light-primary: #FFFFFF;
+    /* COLOR BODY */
+    --color-background-body: #FFFFFF;
+    /* COLORS NAV */
+    --color-logo: #FFFFFF;
+    --color-background-navbar: #000000;
+    /* COLORS FOOTER */
+    --color-background-footer: #000000;
+    /* COLORS NOTIFICATION */
+    --color-danger: #FF7675;
+    --color-warning: #F0DF51;
+    --color-success: #03D29F;
+    /* COLOR BUTTON */
+    --color-hover-button: #a76d00d5;
+    /* COLORS SECTION */
+    --color-background-section: #F7F7F7;
+    /* BOX SHADOW */
+    --box-shadow-1: 0px 4px 12px rgb(0 0 0 / 12%), 0px 0px 2px rgb(0 0 0 / 8%);
+}
+
+
+/* GENERAL SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: var(--family-primary);
+    font-size: 1.6rem;
+    background-color: var(--color-background-body);
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* CONTAINER SETTINGS */
+
+.container {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+
+/* SECTION SETTINGS */
+
+section {
+    min-height: 80vh;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--color-background-section);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* CARD SETTINGS */
+
+.card {
+    width: 100%;
+    background-color: var(--color-light-primary);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-1);
+    margin-bottom: 20px;
+}
+
+.card-padding-20 {
+    padding: 20px;
+}
+
+
+/* TEXT SETTINGS */
+
+.text-muted {
+    opacity: 0.7;
+}
+
+.text-theme {
+    color: var(--color-theme-primary)!important;
+    font-weight: 600;
+}
+
+
+/* .text-danger {
+    color: var(--color-danger)!important;
+    font-weight: 600;
+}
+
+.text-warning {
+    color: var(--color-warning);
+    font-weight: 600;
+}
+
+.text-success {
+    color: var(--color-success);
+    font-weight: 600;
+} */
+
+
+/* .background-danger {
+    background-color: var(--color-danger);
+}
+
+.background-warning {
+    background-color: var(--color-warning);
+}
+
+.background-success {
+    background-color: var(--color-success);
+} */
+
+
+/* BUTTON SETTINGS */
+
+.button {
+    font-family: var(--family-primary);
+    color: var(--color-light-primary);
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-theme {
+    background-color: var(--color-theme-primary);
+}
+
+.button-theme:hover {
+    background-color: var(--color-hover-button);
+}
+
+.button-medium {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 7px 7px;
+    border-radius: 5px;
+}
+
+
+/* MEDIA SETTINGS */
+
+@media only screen and (min-width: 576px) {
+    /* GENERAL SETTINGS */
+    body {
+        font-size: 1.7rem;
+    }
+    /* CONTAINER SETTINGS */
+    .container {
+        max-width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* GENERAL SETTINGS */
+    body {
+        font-size: 1.8rem;
+    }
+    /* CONTAINER SETTINGS */
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    /* GENERAL SETTINGS */
+    body {
+        font-size: 1.9rem;
+    }
+    /* CONTAINER SETTINGS */
+    .container {
+        max-width: 960px;
+    }
+    /* CARD SETTINGS */
+    .card {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    /* CONTAINER SETTINGS */
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    /* CONTAINER SETTINGS */
+    .container {
+        max-width: 1320px;
+    }
+}

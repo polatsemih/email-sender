@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Basic Page Needs -->
+        <title>Email Service</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Language" content="en_US" />
+
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="/assets/favicon.ico">
+
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/assets/css/common.css">
+        <link rel="stylesheet" href="/assets/css/navbar.css">
+        <link rel="stylesheet" href="/assets/css/footer.css">
+        @RenderSection("Css", false)
+    </head>
+
+    <body>
+
+        @await Html.PartialAsync("_navbar")
+
+        <main>
+
+            @RenderBody()
+
+        </main>
+
+        @await Html.PartialAsync("_footer")
+        
+        @RenderSection("Scripts", false)
+    </body>
+</html>
