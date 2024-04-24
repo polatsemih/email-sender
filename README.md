@@ -1,5 +1,5 @@
 # email-sender
-A web-based email sender application
+A web-based email sender application using the ClosedXML library and Simple Mail Transfer Protocol (SMTP) in ASP.NET Core MVC.
 
 ## Open source libraries used
 
